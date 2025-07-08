@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const db = require('./config/db');
+const connectDB = require('./config/db');
 const userRoutes = require('./routes/user.routes');
 const projectRoutes = require('./routes/project.routes');
 const ticketRoutes = require('./routes/ticket.routes');
@@ -23,7 +23,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/tickets', ticketRoutes);
 
-db.connect();
+connectDB();
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
