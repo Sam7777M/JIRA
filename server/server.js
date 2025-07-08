@@ -4,7 +4,7 @@ const cors = require('cors');
 const db = require('./config/db');
 const userRoutes = require('./routes/user.routes');
 const projectRoutes = require('./routes/project.routes');
-const ticketRoutes = require('./routes/ticket');
+const ticketRoutes = require('./routes/ticket.routes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
