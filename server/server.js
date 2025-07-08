@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const db = require('./config/db');
 const userRoutes = require('./routes/user.routes');
+const projectRoutes = require('./routes/project.routes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 
 // Auth routes
 app.use('/api/user', userRoutes);
+app.use('/api/projects', projectRoutes);
 
 db.connect();
 
