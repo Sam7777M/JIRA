@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
 const ticketSchema = new mongoose.Schema({
   title: { type: String, required: true, trim: true },
   description: { type: String, trim: true },
-  type: { type: String, enum: ['Bug', 'Task', 'Story'], required: true },
+  type: { type: String, enum: ['Bug', 'Task', 'Story','Epic'], required: true },
   priority: { type: String, enum: ['Low', 'Medium', 'High'], default: 'Medium' },
   status: { type: String, enum: ['Backlog', 'To Do', 'In Progress', 'Done'], default: 'Backlog' },
   projectId: { type: mongoose.Schema.Types.ObjectId, ref: 'Project', required: true },
