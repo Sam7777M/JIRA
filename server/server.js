@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+connectDB();
+console.log('Database connected successfully');
 // Example route
 app.get('/', (req, res) => {
   res.send('API is running...');
@@ -23,7 +25,6 @@ app.use('/api/user', userRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/tickets', ticketRoutes);
 
-connectDB();
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
